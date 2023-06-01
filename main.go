@@ -16,9 +16,9 @@ func main() {
 	store := cookie.NewStore([]byte("secret"))
 	router.Use(sessions.Sessions("mysession", store))
 	router.LoadHTMLGlob("templates/*")
+	//加载接口 
 	routers.ApiAllRouterInit(router)
 
-	// 显示登录页面
 
 	// 启动服务器
 	router.Run(":8080")
